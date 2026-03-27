@@ -1,19 +1,20 @@
 public class DisplayResult {
 
-    public static void display() {
+    public static String getDisplayResult() {
         if (DataStore.students.isEmpty()) {
-            System.out.println("No records available\n");
-            return;
+            return "No records available";
         }
 
-        System.out.println("---- Student Results ----");
+        StringBuilder sb = new StringBuilder();
         for (Student s : DataStore.students) {
-            System.out.println(
-                "Roll: " + s.roll +
-                ", Name: " + s.name +
-                ", Marks: " + s.marks
-            );
+            sb.append("Roll: ")
+              .append(s.roll)
+              .append(", Name: ")
+              .append(s.name)
+              .append(", Marks: ")
+              .append(s.marks)
+              .append("\n");
         }
-        System.out.println();
+        return sb.toString().trim();
     }
 }
