@@ -24,4 +24,12 @@ public class AddResult {
     public static void addStudent(int roll, String name, int marks) {
         DataStore.students.add(new Student(roll, name, marks));
     }
+    public static void main(String[] args) {
+        System.out.println("Running AddResult module...");
+
+        // calling method without Scanner
+        addStudent(1, "Sharvari", 95);
+
+        System.out.println("Student added successfully (via Jenkins)");
+    }
 }
