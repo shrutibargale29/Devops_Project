@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Compiling all Java files...'
-                sh 'javac *.java'
+                echo 'Compiling required Java files...'
+                sh 'javac AddResult.java DataStore.java Student.java DisplayResult.java'
             }
         }
 
