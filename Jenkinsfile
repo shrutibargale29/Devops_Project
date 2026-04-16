@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building project...'
-                sh 'javac AddResult.java'
+                echo 'Compiling all Java files...'
+                sh 'javac *.java'
             }
         }
 
         stage('Run') {
             steps {
-                echo 'Running program...'
+                echo 'Running AddResult...'
                 sh 'java AddResult'
             }
         }
