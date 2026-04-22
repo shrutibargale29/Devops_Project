@@ -1,3 +1,5 @@
+package com.example;
+
 public class DisplayResult {
 
     public static String getDisplayResult() {
@@ -16,5 +18,8 @@ public class DisplayResult {
               .append("\n");
         }
         return sb.toString().trim();
+    }
+    public static void main(String[] args) {
+        System.out.println(getDisplayResult());
     }
 }
