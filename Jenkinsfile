@@ -1,41 +1,28 @@
 pipeline {
-agent any
+    agent any
 
-```
-tools {
-    maven 'Maven'
-    jdk 'Java'
-}
+    tools {
+        maven 'Maven'
+        jdk 'Java'
+    }
 
-stages {
+    stages {
+        stage('Build') {
+            steps {
+                bat 'mvn clean compile'
+            }
+        }
 
-    stage('Build') {
-        steps {
-            bat 'mvn clean compile'
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'mvn package'
+            }
         }
     }
-
-    stage('Test') {
-        steps {
-            bat 'mvn test'
-        }
-    }
-
-    stage('Package') {
-        steps {
-            bat 'mvn package'
-        }
-    }
-}
-
-post {
-    success {
-        echo 'BUILD SUCCESS'
-    }
-    failure {
-        echo 'BUILD FAILED'
-    }
-}
-```
-
 }
