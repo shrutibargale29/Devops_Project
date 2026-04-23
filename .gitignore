@@ -1,0 +1,17 @@
+# Maven build folder
+target/
+
+# Logs
+*.log
+
+# Compiled files
+*.class
+
+# Packaged files
+*.jar
+*.war
+
+# IDE files (optional but recommended)
+.vscode/
+.idea/
+*.iml
